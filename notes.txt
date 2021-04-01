@@ -1,0 +1,46 @@
+Name
+Experience
+Primary Skillset
+Experience in Golang
+
+C
+C++
+Ruby - 1995
+Java - 1995
+.NET - 1999
+Node.js - 2009
+
+Golang - 2010
+    Easy to use
+    Compatible 
+    Easy to learn
+    Execution time
+    Memory Efficient
+    More features when compared to other languages
+    Platform independent
+    third party modules
+
+
+    Simplicity
+        25 keywords
+            No classes, while, exceptions, try catch
+
+    More close to the hardware
+        Better performance
+    
+    Fast compiler
+
+    Built for concurrency
+        go, range, select, data type - chan
+
+    Ways of solving concurrency problems
+        Multithreading
+            Resource heavy feature
+            Adds other complexities
+                Data has to be threadsafe
+                Handle race conditions
+                Avoid dead locks
+                
+        Single thread
+ 
+    
