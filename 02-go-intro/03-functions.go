@@ -51,11 +51,14 @@ func divide(x, y int) (int, int, error) {
 }
 */
 
-var counter = 0
+func getCount() func() int {
+	var counter = 0
 
-func count() int {
-	counter += 1
-	return counter
+	count := func() int {
+		counter += 1
+		return counter
+	}
+	return count
 }
 
 func main() {
@@ -83,12 +86,11 @@ func main() {
 	}
 	fmt.Printf("Dividing 10 by 0, quotient = %v, remainder = %v\n", quotient, remainder)
 
+	count := getCount()
 	fmt.Println(count())
 	fmt.Println(count())
 	fmt.Println(count())
 	fmt.Println(count())
-
-	counter = 10000
 	fmt.Println(count())
 	fmt.Println(count())
 

@@ -86,3 +86,4 @@ Higher Order Functions
     Assign functions to variables
     Pass a function as an argument to another function
     Return a function as a return value from another function
+        (to create a closure)
