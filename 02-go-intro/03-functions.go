@@ -132,9 +132,10 @@ func main() {
 	fmt.Println(down())
 
 	fmt.Println("Even numbers")
-	evenNos := genNos(func(no int) bool {
+	isEven := func(no int) bool {
 		return no%2 == 0
-	})
+	}
+	evenNos := genNos(isEven)
 	for i := 0; i < 10; i++ {
 		fmt.Println(evenNos())
 	}

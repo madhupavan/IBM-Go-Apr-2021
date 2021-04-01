@@ -89,3 +89,14 @@ Higher Order Functions
         (to create a closure)
     Variadic functions (demo pending)
 
+Collections Types
+    Array
+        Fixed Size
+    Slice
+    Map
+
+    collection supporting construct
+        range
+
+
+
