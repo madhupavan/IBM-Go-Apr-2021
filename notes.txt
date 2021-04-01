@@ -95,11 +95,20 @@ Collections Types
     Slice
         Varyiing size
         uses an array internally
-        
+
     Map
 
     collection supporting construct
         range
 
 
+Assignment:
+    How to accept data from the user in the console
 
+
+Build an interactive calculator
+    Accept the no1 & n2
+    Display the menu of operators
+    Accept the operator 
+    Perform the selected operation on no1 & no2 and print the result
+    
