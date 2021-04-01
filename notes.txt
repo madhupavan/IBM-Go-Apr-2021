@@ -31,16 +31,28 @@ Golang - 2010
     Fast compiler
 
     Built for concurrency
-        go, range, select, data type - chan
+        Language features for concurrency
+            go, range, select, data type - chan
+        Builtin Scheduler in the runtime
 
     Ways of solving concurrency problems
         Multithreading
             Resource heavy feature
+                4 MB for each thread
             Adds other complexities
                 Data has to be threadsafe
                 Handle race conditions
                 Avoid dead locks
                 
         Single thread
- 
+            Resource Efficient
+            Difficult to accommodate long running cpu intensive tasks
+
+        Goroutines
+            Thread like infrastructure
+            Multiple goroutines are executed in a single thread
+            Scheduler is builtin in the runtime
+            Resource Efficient
+                2 KB for each goroutine
+
     
