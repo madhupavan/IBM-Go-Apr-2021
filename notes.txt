@@ -87,3 +87,5 @@ Higher Order Functions
     Pass a function as an argument to another function
     Return a function as a return value from another function
         (to create a closure)
+    Variadic functions (demo pending)
+

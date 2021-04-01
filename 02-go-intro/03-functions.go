@@ -61,6 +61,18 @@ func getCount() func() int { //step 1
 	return count //step 5
 }
 
+func genNos(predicate func(int) bool) func() int {
+	no := 0
+	return func() int {
+		for {
+			no += 1
+			if predicate(no) {
+				return no
+			}
+		}
+	}
+}
+
 func main() {
 	/*
 		add := func(x, y int) int {
@@ -118,6 +130,32 @@ func main() {
 	fmt.Println(down())
 	fmt.Println(down())
 	fmt.Println(down())
+
+	fmt.Println("Even numbers")
+	evenNos := genNos(func(no int) bool {
+		return no%2 == 0
+	})
+	for i := 0; i < 10; i++ {
+		fmt.Println(evenNos())
+	}
+
+	fmt.Println("Prime Numbers")
+	isPrime := func(n int) bool {
+		if n == 1 {
+			return false
+		}
+		for i := 2; i <= (n / 2); i++ {
+			if n%i == 0 {
+				return false
+			}
+		}
+		return true
+	}
+
+	primeNos := genNos(isPrime)
+	for i := 0; i < 10; i++ {
+		fmt.Println(primeNos())
+	}
 }
 
 /*
