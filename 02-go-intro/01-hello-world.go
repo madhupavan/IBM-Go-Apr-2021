@@ -25,7 +25,9 @@ func main() {
 } */
 
 //package level members
-var username, message string = "Magesh", "Hello!"
+/*
+	var username, message string = "Magesh", "Hello!"
+*/
 
 func main() {
 	/*
@@ -51,5 +53,53 @@ func main() {
 		username, message = "Magesh", "Hello!"
 	*/
 
-	fmt.Println(username, message)
+	/*
+		const username, message = "Magesh", "Hello!"
+		fmt.Println(username, message)
+	*/
+
+	//variables of different types
+	/*
+		var username string
+		var age int
+		var city string
+
+		username = "Magesh"
+		age = 40
+		city = "Bangalore"
+	*/
+
+	/*
+		var (
+			username string
+			age      int
+			city     string
+		)
+
+		username = "Magesh"
+		age = 40
+		city = "Bangalore"
+	*/
+
+	/*
+		var (
+			username string = "Magesh"
+			age      int    = 40
+			city     string = "Bangalore"
+		)
+	*/
+
+	/*
+		var (
+			username, city string = "Magesh", "Bangalore"
+			age            int    = 40
+		)
+	*/
+
+	const (
+		username, city string = "Magesh", "Bangalore"
+		age            int    = 40
+	)
+
+	fmt.Println(username, age, city)
 }
