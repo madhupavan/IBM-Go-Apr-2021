@@ -106,14 +106,23 @@ func main() {
 		var char int32 = 97
 		fmt.Printf("%c\n", char)
 	*/
-	//fmt.Println(username, age, city)
+	fmt.Println(username, age, city)
 	/*
 		fmt.Printf("%s (%d) %s\n", username, age, city)
 		fmt.Printf("%T (%T) %T\n", username, age, city)
 	*/
-	v1 := fmt.Sprintf("%s (%d) %s\n", username, age, city)
-	v2 := fmt.Sprintf("%T (%T) %T\n", username, age, city)
-	fmt.Printf("%s%s", v1, v2)
-	var v3 string
+	/*
+		v1 := fmt.Sprintf("%s (%d) %s\n", username, age, city)
+		v2 := fmt.Sprintf("%T (%T) %T\n", username, age, city)
+		fmt.Printf("%s%s", v1, v2)
+	*/
 
+	i := -50
+	fmt.Printf("i = %v (%T)\n", i, i)
+	f := float32(i)
+	fmt.Printf("f = %v (%T)\n", f, f)
+	ui := uint(i)
+	fmt.Printf("ui = %v (%T)\n", ui, ui)
+	x := f * float32(i)
+	fmt.Println(x)
 }
