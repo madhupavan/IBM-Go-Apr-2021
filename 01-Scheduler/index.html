@@ -18,9 +18,12 @@
             divMessages.innerHTML += msg + '<br/>';
         }
         function onBtnDoWorkClick(){
-            displayMessage('Work Started...');
+            displayMessage('Work Started...'); // DOM update but NOT screen repainting
+            setTimeout(triggerWork)
+        }
+        function triggerWork(){
             doWork();
-            displayMessage('Work Completed...');
+            displayMessage('Work Completed...'); //DOM updates but NOT screen repainting
         }
         function init(){
             var btnDoWork = document.getElementById('btnDoWork');
