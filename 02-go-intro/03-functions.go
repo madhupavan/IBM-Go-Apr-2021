@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 /*
 func add(x, y int) int {
@@ -26,11 +29,27 @@ func divide(x, y int) (quotient, remainder int) {
 }
 */
 
-func divide(x, y int) (quotient, remainder int) {
+func divide(x, y int) (quotient, remainder int, err error) {
+	if y == 0 {
+		err = errors.New("Invalid arguments")
+		return
+	}
 	quotient = x / y
 	remainder = x % y
 	return
 }
+
+/*
+func divide(x, y int) (int, int, error) {
+	if y == 0 {
+		err := errors.New("Invalid arguments")
+		return 0, 0, err
+	}
+	quotient := x / y
+	remainder := x % y
+	return quotient, remainder, nil
+}
+*/
 
 func main() {
 	/*
@@ -47,7 +66,13 @@ func main() {
 		}(100, 200)
 	*/
 
-	quotient, remainder := divide(10, 3)
-	fmt.Printf("Dividing 10 by 3, quotient = %v, remainder = %v\n", quotient, remainder)
+	quotient, remainder, err := divide(10, 0)
+	if err != nil {
+		fmt.Println("Something went wrong!!")
+		fmt.Println(err)
+		fmt.Printf("quotient = %v, remainder = %v\n", quotient, remainder)
+		return
+	}
+	fmt.Printf("Dividing 10 by 0, quotient = %v, remainder = %v\n", quotient, remainder)
 
 }
