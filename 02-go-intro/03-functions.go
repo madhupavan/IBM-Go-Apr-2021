@@ -51,14 +51,14 @@ func divide(x, y int) (int, int, error) {
 }
 */
 
-func getCount() func() int {
-	var counter = 0
+func getCount() func() int { //step 1
+	var counter = 0 //step 2
 
-	count := func() int {
-		counter += 1
+	count := func() int { //step 3
+		counter += 1 //step 4
 		return counter
 	}
-	return count
+	return count //step 5
 }
 
 func main() {
@@ -86,12 +86,47 @@ func main() {
 	}
 	fmt.Printf("Dividing 10 by 0, quotient = %v, remainder = %v\n", quotient, remainder)
 
-	count := getCount()
-	fmt.Println(count())
-	fmt.Println(count())
-	fmt.Println(count())
-	fmt.Println(count())
-	fmt.Println(count())
-	fmt.Println(count())
+	/*
+		count := getCount()
+		fmt.Println(count())
+		fmt.Println(count())
+		fmt.Println(count())
+		fmt.Println(count())
+		fmt.Println(count())
+		fmt.Println(count())
+	*/
+	up, down := func() (func() int, func() int) {
+		counter := 0
+		up := func() int {
+			counter += 1
+			return counter
+		}
+		down := func() int {
+			counter -= 1
+			return counter
+		}
+		return up, down
+	}()
 
+	fmt.Println(up())
+	fmt.Println(up())
+	fmt.Println(up())
+	fmt.Println(up())
+
+	fmt.Println(down())
+	fmt.Println(down())
+	fmt.Println(down())
+	fmt.Println(down())
+	fmt.Println(down())
 }
+
+/*
+up() => 1
+up() => 2
+up() => 3
+up() => 4
+
+down() => 3
+down() => 2
+down() => 1
+down() => 0 */
