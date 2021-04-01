@@ -101,5 +101,19 @@ func main() {
 		age            int    = 40
 	)
 
-	fmt.Println(username, age, city)
+	//var char rune = 'a'
+	/*
+		var char int32 = 97
+		fmt.Printf("%c\n", char)
+	*/
+	//fmt.Println(username, age, city)
+	/*
+		fmt.Printf("%s (%d) %s\n", username, age, city)
+		fmt.Printf("%T (%T) %T\n", username, age, city)
+	*/
+	v1 := fmt.Sprintf("%s (%d) %s\n", username, age, city)
+	v2 := fmt.Sprintf("%T (%T) %T\n", username, age, city)
+	fmt.Printf("%s%s", v1, v2)
+	var v3 string
+
 }
