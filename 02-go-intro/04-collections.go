@@ -23,7 +23,12 @@ func main() {
 			matrix[i][j] = fmt.Sprintf("row - %d col - %d", i, j)
 		}
 	}
-	fmt.Printf("%q\n", matrix)
+	/* fmt.Printf("%q\n", matrix) */
+	for _, row := range matrix {
+		for _, col := range row {
+			fmt.Println(col)
+		}
+	}
 
 	//Slice
 	/*
@@ -59,4 +64,39 @@ func main() {
 	cities = append(cities, "Udupi")
 
 	fmt.Println(cities)
+
+	/*
+		for i := 0; i < len(cities); i++ {
+			fmt.Println(cities[i])
+		}
+	*/
+
+	for _, city := range cities {
+		fmt.Println(city)
+	}
+
+	//map
+	cityRanks := map[string]int{
+		"Udupi":     2,
+		"Mysuru":    1,
+		"Mangaluru": 3,
+		"Bengaluru": 4,
+	}
+
+	fmt.Printf("Rank of Bengaluru = %d\n", cityRanks["Bengaluru"])
+	cityRanks["Tumkuru"] = 5
+	fmt.Println(cityRanks)
+
+	for city, rank := range cityRanks {
+		fmt.Printf("City = %s, Rank=%d\n", city, rank)
+	}
+
+	//removing an item from map
+	delete(cityRanks, "Bengaluru")
+	fmt.Println("After deleting Bengaluru")
+	fmt.Println(cityRanks)
+
+	//check for the existance of a key
+	_, exists := cityRanks["Bengaluru"]
+	fmt.Println("Is Bengaluru in the list? ", exists)
 }

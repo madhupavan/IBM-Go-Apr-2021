@@ -93,6 +93,9 @@ Collections Types
     Array
         Fixed Size
     Slice
+        Varyiing size
+        uses an array internally
+        
     Map
 
     collection supporting construct
