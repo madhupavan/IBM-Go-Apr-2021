@@ -34,6 +34,7 @@ Golang - 2010
         Language features for concurrency
             go, range, select, data type - chan
         Builtin Scheduler in the runtime
+        Does not have 'exceptions, throw, try catch'
 
     Ways of solving concurrency problems
         Multithreading

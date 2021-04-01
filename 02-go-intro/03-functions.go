@@ -51,6 +51,13 @@ func divide(x, y int) (int, int, error) {
 }
 */
 
+var counter = 0
+
+func count() int {
+	counter += 1
+	return counter
+}
+
 func main() {
 	/*
 		add := func(x, y int) int {
@@ -66,7 +73,8 @@ func main() {
 		}(100, 200)
 	*/
 
-	quotient, remainder, err := divide(10, 0)
+	//Handling errors from functions
+	quotient, remainder, err := divide(10, 3)
 	if err != nil {
 		fmt.Println("Something went wrong!!")
 		fmt.Println(err)
@@ -74,5 +82,14 @@ func main() {
 		return
 	}
 	fmt.Printf("Dividing 10 by 0, quotient = %v, remainder = %v\n", quotient, remainder)
+
+	fmt.Println(count())
+	fmt.Println(count())
+	fmt.Println(count())
+	fmt.Println(count())
+
+	counter = 10000
+	fmt.Println(count())
+	fmt.Println(count())
 
 }
