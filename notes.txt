@@ -59,7 +59,7 @@ Golang - 2010
 Data types in Go
     bool
     string
-    
+
     int
     int8
     int16
@@ -80,3 +80,8 @@ Data types in Go
     
     byte alias for uint8
     rune alias for int32
+
+Higher Order Functions
+    Assign functions to variables
+    Pass a function as an argument to another function
+    Return a function as a return value from another function
