@@ -22,6 +22,13 @@ type PerishableProduct struct {
 	expiry string
 }
 
+func NewPerishableProduct(id int, name string, cost float32, units int, category string, expiry string) *PerishableProduct {
+	return &PerishableProduct{
+		Product{id: 101, name: "Grapes", cost: 60, units: 100, category: "Food"},
+		"2 Days",
+	}
+}
+
 func main() {
 
 	//p := Product{id: 100, name: "Pen", cost: 10, units: 50, category: "Stationary"}
@@ -30,10 +37,7 @@ func main() {
 	fmt.Println(p.name)
 	fmt.Println(pptr.name)
 
-	pp := PerishableProduct{
-		Product{id: 101, name: "Grapes", cost: 60, units: 100, category: "Food"},
-		"2 Days",
-	}
+	pp := NewPerishableProduct(200, "Grapes", 60, 100, "Food", "2 Days")
 
 	fmt.Println(pp)
 	fmt.Println(pp.name)
