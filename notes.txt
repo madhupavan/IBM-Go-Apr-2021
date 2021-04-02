@@ -112,3 +112,5 @@ Build an interactive calculator
     Accept the operator 
     Perform the selected operation on no1 & no2 and print the result
     
+
+"Composition Over Inheritance"
