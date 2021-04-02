@@ -22,9 +22,10 @@ func main() {
 }
 
 func swap(x *int, y *int) {
-	temp := *x
+	/* temp := *x
 	*x = *y
-	*y = temp
+	*y = temp */
+	*x, *y = *y, *x
 }
 
 func increment(x *int) {
