@@ -114,3 +114,24 @@ Build an interactive calculator
     
 
 "Composition Over Inheritance"
+
+Before 1.13
+GOROOT
+    go binaries
+
+GOPATH
+    bin
+    pkg
+    src
+        github.com
+            tkmagesh
+                App1
+                App2
+
+go modules
+    physical
+        folders
+    logical
+        packages
+
+go mod init calculator-app
