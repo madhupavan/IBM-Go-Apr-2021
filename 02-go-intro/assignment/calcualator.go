@@ -15,11 +15,15 @@ func main() {
 		if choice < 0 || choice >= 5 {
 			break
 		}
-		fmt.Println("Enter the operands :")
-		fmt.Scanf("%d %d", &n1, &n2)
+		getOperands(&n1, &n2)
 		result := operators[choice](n1, n2)
 		fmt.Printf("result : %d\n", result)
 	}
+}
+
+func getOperands(n1 *int, n2 *int) {
+	fmt.Println("Enter the operands :")
+	fmt.Scanf("%d %d", n1, n2)
 }
 
 func getUserChoice() int {
