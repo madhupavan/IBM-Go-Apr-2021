@@ -31,6 +31,7 @@ func main() {
 		Product{id: 101, name: "Grapes", cost: 60, units: 100, category: "Food"},
 		"2 Days",
 	}
+
 	fmt.Println(pp)
 	fmt.Println(pp.name)
 }

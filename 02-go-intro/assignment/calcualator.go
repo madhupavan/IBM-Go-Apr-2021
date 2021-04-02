@@ -2,8 +2,13 @@ package main
 
 import "fmt"
 
+type Operands struct {
+	n1 int
+	n2 int
+}
+
 func main() {
-	var n1, n2 int
+	var operands Operands = Operands{}
 	var operators = map[int]func(int, int) int{
 		1: add,
 		2: subtract,
@@ -15,15 +20,15 @@ func main() {
 		if choice < 0 || choice >= 5 {
 			break
 		}
-		getOperands(&n1, &n2)
-		result := operators[choice](n1, n2)
+		getOperands(&operands)
+		result := operators[choice](operands.n1, operands.n2)
 		fmt.Printf("result : %d\n", result)
 	}
 }
 
-func getOperands(n1 *int, n2 *int) {
+func getOperands(operands *Operands) {
 	fmt.Println("Enter the operands :")
-	fmt.Scanf("%d %d", n1, n2)
+	fmt.Scanf("%d %d", &operands.n1, &operands.n2)
 }
 
 func getUserChoice() int {
