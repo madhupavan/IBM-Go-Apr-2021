@@ -68,13 +68,43 @@ func (products Products) Print() {
 	}
 }
 
+var productsComparers map[string]func(Products, int, int) bool = map[string]func(Products, int, int) bool{
+	"name": func(products Products, i, j int) bool {
+		return products[i].name < products[j].name
+	},
+
+	"id": func(products Products, i, j int) bool {
+		return products[i].id < products[j].id
+	},
+
+	"cost": func(products Products, i, j int) bool {
+		return products[i].cost < products[j].cost
+	},
+
+	"units": func(products Products, i, j int) bool {
+		return products[i].units < products[j].units
+	},
+
+	"category": func(products Products, i, j int) bool {
+		return products[i].category < products[j].category
+	},
+}
+
+var productsComparer func(products Products, i, j int) bool
+
+func (products Products) sort(attrName string) {
+	productsComparer = productsComparers[attrName]
+	sort.Sort(products)
+}
+
 //Implementation of the "Interface" interface in "Products" for sorting
+
 func (products Products) Len() int {
 	return len(products)
 }
 
 func (products Products) Less(i, j int) bool {
-	return products[i].id < products[j].id
+	return productsComparer(products, i, j)
 }
 
 func (products Products) Swap(i, j int) {
@@ -119,9 +149,20 @@ func main() {
 	fmt.Println("Before sorting")
 	products.Print()
 
-	sort.Sort(products)
+	fmt.Println("After Sorting  - default [id]")
+	products.sort("id")
+	products.Print()
 
-	fmt.Println("After Sorting")
+	fmt.Println("After Sorting  - default [name]")
+	products.sort("name")
+	products.Print()
+
+	fmt.Println("After Sorting  - default [cost]")
+	products.sort("cost")
+	products.Print()
+
+	fmt.Println("After Sorting  - default [category]")
+	products.sort("category")
 	products.Print()
 
 }
