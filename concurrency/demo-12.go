@@ -5,12 +5,28 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
-func main() {
+func getResponse(ch chan *http.Response) {
 	res, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 	if err != nil {
 		log.Fatalln(err)
 	}
-	io.Copy(os.Stdout, res.Body)
+	ch <- res
+}
+
+func main() {
+	ch := make(chan *http.Response)
+	go getResponse(ch)
+	for {
+		select {
+		case res := <-ch:
+			io.Copy(os.Stdout, res.Body)
+			return
+		case <-time.After(1000 * time.Millisecond):
+			log.Fatalf("Req timed out!!")
+		}
+	}
+
 }
