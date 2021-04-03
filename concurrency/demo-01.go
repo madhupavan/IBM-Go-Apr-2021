@@ -21,9 +21,11 @@ func print(s string) {
 }
 
 func main() {
+	/* 
 	addClient(100, 200)
 	z = 1000
-	addClient(100, 200)
+	addClient(100, 200) 
+	*/
 	/*
 		go print("Hello")
 		print("World")
