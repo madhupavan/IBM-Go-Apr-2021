@@ -143,3 +143,10 @@ Pure Function
 
 Dont share memory for communication
     Instead communicate by sharing memory
+
+defer
+    defer the execution of a function after the current function execution is completed
+
+panic & recover
+
+'recover' can be used ONLY in a deferred function
